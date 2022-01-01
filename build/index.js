@@ -1,24 +1,23 @@
 "use strict";
-class Sorter {
-    constructor(collection) {
-        this.collection = collection;
-    }
-    mySort() {
-        // const { length } = this.collection
-        // for (let i = 0; i < length; i++) {
-        //   for (let j = 0; j < length - i - 1; j++) {
-        //     if (this.collection[j] > this.collection[j + 1]) {
-        //       const leftHand = this.collection[j]
-        //       this.collection[j] = this.collection[j + 1]
-        //       this.collection[j + 1] = leftHand
-        //     }
-        //   }
-        // }
-        // console.log(this.collection)
-        console.log(this.collection.sort((a, b) => (a < b ? -1 : b < a ? 1 : 0)));
-    }
-}
-const numSorter = new Sorter([10, 5, -5, 0]);
-numSorter.mySort();
-const stringSorter = new Sorter('apple'.split(''));
-stringSorter.mySort();
+Object.defineProperty(exports, "__esModule", { value: true });
+const NumbersCollection_1 = require("./NumbersCollection");
+const CharactersCollection_1 = require("./CharactersCollection");
+const LinkedList_1 = require("./LinkedList");
+const numCollection = new NumbersCollection_1.NumbersCollection([-1000, 5, -5, 0]);
+// console.log(numCollection.sort())
+// console.log(numCollection.length)
+const charCollection = new CharactersCollection_1.CharactersCollection('27Twinky');
+// console.log(charCollection.sort())
+// console.log(charCollection.length)
+const list = new LinkedList_1.LinkedList();
+list.add(1001);
+list.add(2);
+list.add(5);
+list.add(4);
+list.add(56);
+// console.log(JSON.stringify(list, null, 2))
+// console.log(list.length)
+list.sort();
+console.log(JSON.stringify(list, null, 2));
+// console.log(list.at(5))
+list.print();

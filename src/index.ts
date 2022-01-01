@@ -1,32 +1,25 @@
-interface Sort {
-  collection: number[] | string[]
-}
+import { NumbersCollection } from './NumbersCollection'
+import { CharactersCollection } from './CharactersCollection'
+import { LinkedList } from './LinkedList'
 
-class Sorter {
-  collection: Sort
+const numCollection = new NumbersCollection([-1000, 5, -5, 0])
+// console.log(numCollection.sort())
+// console.log(numCollection.length)
 
-  constructor(collection: Sort) {
-    this.collection = collection
-  }
+const charCollection = new CharactersCollection('27Twinky')
+// console.log(charCollection.sort())
+// console.log(charCollection.length)
 
-  mySort(): void {
-    // const { length } = this.collection
-    // for (let i = 0; i < length; i++) {
-    //   for (let j = 0; j < length - i - 1; j++) {
-    //     if (this.collection[j] > this.collection[j + 1]) {
-    //       const leftHand = this.collection[j]
-    //       this.collection[j] = this.collection[j + 1]
-    //       this.collection[j + 1] = leftHand
-    //     }
-    //   }
-    // }
-    // console.log(this.collection)
+const list = new LinkedList()
+list.add(1001)
+list.add(2)
+list.add(5)
+list.add(4)
+list.add(56)
+// console.log(JSON.stringify(list, null, 2))
+// console.log(list.length)
+list.sort()
+console.log(JSON.stringify(list, null, 2))
+// console.log(list.at(5))
 
-    console.log(this.collection.sort((a, b) => (a < b ? -1 : b < a ? 1 : 0)))
-  }
-}
-
-const numSorter = new Sorter([10, 5, -5, 0])
-numSorter.mySort()
-const stringSorter = new Sorter('apple'.split(''))
-stringSorter.mySort()
+list.print()
